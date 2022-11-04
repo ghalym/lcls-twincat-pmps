@@ -36,6 +36,9 @@
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AncillaryComponents\FB_TempSensor_FFO.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\InternalDUT\E_MPSBeamRates.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -246,9 +249,6 @@
     <Compile Include="MajorComponents\FB_RateFromEPICS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MajorComponents\FB_TempSensor_FFO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MajorComponents\I_LowerAuthority.TcIO">
       <SubType>Code</SubType>
     </Compile>
@@ -414,6 +414,7 @@
     <Folder Include="MajorComponents\FastFaults" />
     <Folder Include="MajorComponents\PMPS_MPS_Interface" />
     <Folder Include="ImplicitChecks" />
+    <Folder Include="AncillaryComponents" />
     <Folder Include="TestComponents" />
     <Folder Include="TestComponents\DUT" />
     <Folder Include="VISUs" />
