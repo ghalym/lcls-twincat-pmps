@@ -6,7 +6,6 @@ VAR_INPUT
 	bExecute             : BOOL; //Rising Edge
 	jsonDoc 		: SJsonValue;
 	sDeviceName : STRING;
-	//asDeviceStateNames: ARRAY [1.. MOTION_GVL.MAX_STATES] OF STRING;
 END_VAR
 VAR_OUTPUT
 	bHasDevice		: BOOL;
@@ -18,7 +17,6 @@ VAR_OUTPUT
 	sErrMsg				 :STRING;
 END_VAR
 VAR_IN_OUT
-	//ARRAY [1.. MOTION_GVL.MAX_STATES] ;
 	arrStates: ARRAY[*] OF ST_DbStateParams;
 	io_fbFFHWO    :    FB_HardwareFFOutput;
 END_VAR
