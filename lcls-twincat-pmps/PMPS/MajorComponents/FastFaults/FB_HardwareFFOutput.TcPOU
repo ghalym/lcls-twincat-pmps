@@ -8,6 +8,7 @@ VAR CONSTANT
     FF_ARRAY_UPPER_BOUND : UINT := PMPS_PARAM.MAX_FAST_FAULTS;
 END_VAR
 VAR_INPUT
+	//FF_ARRAY_UPPER_BOUND : UINT := PMPS_PARAM.MAX_FAST_FAULTS;
     {attribute 'pytmc' := '
         pv: ClearFault
         io: o
@@ -32,15 +33,14 @@ VAR_OUTPUT
     q_xValidSyncTime : BOOL;// system time bValid output True when sync is successful
 END_VAR
 VAR_IN_OUT
-
+    
 END_VAR
 VAR
     {attribute 'pytmc' := '
         pv: FF
      '}
     astFF : ARRAY[1..FF_ARRAY_UPPER_BOUND] OF ST_FF;
-
-    {attribute 'pytmc' := '
+	{attribute 'pytmc' := '
         pv: RegistrationFailure
         io: io
      '}
@@ -72,7 +72,7 @@ VAR
     fbLogger : FB_LogMessage := (
         eSevr := TcEventSeverity.Critical,
         eSubsystem := E_Subsystem.MPS,
-        nMinTimeViolationAcceptable := PMPS_PARAM.MAX_FAST_FAULTS);
+        nMinTimeViolationAcceptable := FF_ARRAY_UPPER_BOUND);
 
 END_VAR]]></Declaration>
     <Implementation>
@@ -374,7 +374,7 @@ Idx := THIS^.nIndex;
 IF THIS^.nIndex <= FF_ARRAY_UPPER_BOUND THEN
 
     THIS^.astFF[MIN(THIS^.nIndex,FF_ARRAY_UPPER_BOUND)].Info:=stFFInfo;
-
+	
     THIS^.nIndex := THIS^.nIndex + 1;
 
     Register := TRUE; // Add successful
