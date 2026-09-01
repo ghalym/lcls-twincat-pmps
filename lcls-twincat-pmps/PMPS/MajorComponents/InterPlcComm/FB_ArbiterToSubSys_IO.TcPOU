@@ -77,8 +77,8 @@ VAR
     nActiveCohort : UDINT := 0; // Active cohort. Updated to the req. number from the sub system after request is confirmed.
     nRequestedCohort : UDINT := 0;
     rtToggle : R_TRIG;
-	fbToggleTimer : TON;
- 	tInterval    : TIME := T#100mS;
+    fbToggleTimer : TON;
+     tInterval    : TIME := T#100mS;
 
 END_VAR
 ]]></Declaration>
